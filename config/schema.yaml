@@ -1,0 +1,60 @@
+columns:
+  - Partner: category
+  - Tenure Months: int
+  - Internet Service: category
+  - Tech Support: category
+  - Contract: category
+  - Monthly Charges: int
+  - Churn Label: category   # target
+
+numerical_columns:
+  - Tenure Months
+  - Monthly Charges
+
+categorical_columns:
+  - Partner
+  - Internet Service
+  - Tech Support
+  - Contract
+  - Churn Label
+
+drop_columns:
+  - CustomerID
+  - Count
+  - Country
+  - State
+  - City
+  - Zip Code
+  - Lat Long
+  - Latitude
+  - Longitude
+  - Gender
+  - Senior Citizen
+  - Dependents
+  - Phone Service
+  - Multiple Lines
+  - Online Security
+  - Online Backup
+  - Device Protection
+  - Streaming TV
+  - Streaming Movies
+  - Paperless Billing
+  - Payment Method
+  - Total Charges
+  - Churn Value
+  - Churn Score
+  - CLTV
+  - Churn Reason
+
+# Transformation pipeline settings
+or_columns: []
+
+oh_columns:
+  - Partner
+  - Internet Service
+  - Tech Support
+  - Contract
+
+transform_columns:
+  - Tenure Months
+  - Monthly Charges
