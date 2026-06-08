@@ -48,7 +48,7 @@ feature-engine
 missingno
 
 lightgbm
-
+openpyxl
 neuro_mf
 
 -e .
