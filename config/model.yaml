@@ -1,0 +1,44 @@
+# Model Training Hyperparameter Space
+models:
+  RandomForestClassifier:
+    class: RandomForestClassifier
+    params:
+      n_estimators: [100, 200, 300]
+      max_depth: [10, 12, 15, 20, null]
+      min_samples_split: [2, 5, 10]
+      min_samples_leaf: [1, 2, 4]
+      max_features: ["sqrt", "log2"]
+
+  XGBClassifier:
+    class: XGBClassifier
+    params:
+      n_estimators: [100, 200, 300]
+      max_depth: [3, 5, 7, 9]
+      learning_rate: [0.01, 0.05, 0.1, 0.2]
+      subsample: [0.7, 0.8, 1.0]
+      colsample_bytree: [0.7, 0.8, 1.0]
+      min_child_weight: [1, 3, 5]
+
+  KNeighborsClassifier:
+    class: KNeighborsClassifier
+    params:
+      n_neighbors: [3, 5, 7, 9, 11]
+      weights: ["uniform", "distance"]
+      algorithm: ["auto", "ball_tree", "kd_tree", "brute"]
+      p: [1, 2]
+
+  CatBoostClassifier:
+    class: CatBoostClassifier
+    params:
+      depth: [4, 6, 8, 10]
+      learning_rate: [0.01, 0.05, 0.1]
+      iterations: [100, 200, 300]
+      l2_leaf_reg: [1, 3, 5, 7]
+
+  GradientBoostingClassifier:
+    class: GradientBoostingClassifier
+    params:
+      n_estimators: [100, 200, 300]
+      learning_rate: [0.01, 0.05, 0.1]
+      max_depth: [3, 5, 7]
+      subsample: [0.7, 0.8, 1.0]

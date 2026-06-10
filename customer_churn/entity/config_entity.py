@@ -27,8 +27,7 @@ class DataIngestionConfig:
     collection_name:str = DATA_INGESTION_COLLECTION_NAME
 
 
-# Data validation ke liye liy jo data validation vala part add krne ke bad me ye code add krna hai 
-#  Ab entity/artifact_entity me jao aur vala code add kro
+
 @dataclass
 class DataValidationConfig:
     data_validation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_VALIDATION_DIR_NAME)
@@ -40,30 +39,27 @@ class DataValidationConfig:
 
 
 
-# # Path hai jo data transformation ke bad hoga 
-# # Ab entity/artifact_entity me jao aur code add kro
-# @dataclass
-# class DataTransformationConfig:
-#     data_transformation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_TRANSFORMATION_DIR_NAME)
-#     transformed_train_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
-#                                                     TRAIN_FILE_NAME.replace("csv", "npy"))
-#     transformed_test_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
-#                                                    TEST_FILE_NAME.replace("csv", "npy"))
-#     transformed_object_file_path: str = os.path.join(data_transformation_dir,
-#                                                      DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
-#                                                      PREPROCSSING_OBJECT_FILE_NAME)
+
+@dataclass
+class DataTransformationConfig:
+    data_transformation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_TRANSFORMATION_DIR_NAME)
+    transformed_train_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
+                                                    TRAIN_FILE_NAME.replace("csv", "npy"))
+    transformed_test_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
+                                                   TEST_FILE_NAME.replace("csv", "npy"))
+    transformed_object_file_path: str = os.path.join(data_transformation_dir,
+                                                     DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
+                                                     PREPROCSSING_OBJECT_FILE_NAME)
 
 
 
-# # Model trainer ka code hai jo model trainer folder ke andar banega
-# # Ab entity/artifact_entity me jana hai aur code add krna hai.
 
-# @dataclass
-# class ModelTrainerConfig:
-#     model_trainer_dir: str = os.path.join(training_pipeline_config.artifact_dir, MODEL_TRAINER_DIR_NAME)
-#     trained_model_file_path: str = os.path.join(model_trainer_dir, MODEL_TRAINER_TRAINED_MODEL_DIR, MODEL_FILE_NAME)
-#     expected_accuracy: float = MODEL_TRAINER_EXPECTED_SCORE
-#     model_config_file_path: str = MODEL_TRAINER_MODEL_CONFIG_FILE_PATH
+@dataclass
+class ModelTrainerConfig:
+    model_trainer_dir: str = os.path.join(training_pipeline_config.artifact_dir, MODEL_TRAINER_DIR_NAME)
+    trained_model_file_path: str = os.path.join(model_trainer_dir, MODEL_TRAINER_TRAINED_MODEL_DIR, MODEL_FILE_NAME)
+    expected_accuracy: float = MODEL_TRAINER_EXPECTED_SCORE
+    model_config_file_path: str = MODEL_TRAINER_MODEL_CONFIG_FILE_PATH
 
 
 
