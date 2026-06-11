@@ -1,6 +1,5 @@
 import os
 import sys
-
 import numpy as np
 import dill
 import yaml
@@ -9,19 +8,19 @@ from pandas import DataFrame
 from customer_churn.exception import ChurnException
 from customer_churn.logger import logging
 
-
-
-# yaml file ko read krne ke liye funtion 
+# YAML file read karne ke liye function
 def read_yaml_file(file_path: str) -> dict:
     try:
         with open(file_path, "rb") as yaml_file:
             return yaml.safe_load(yaml_file)
-
     except Exception as e:
         raise ChurnException(e, sys) from e
 
+# Ye alias hai taaki 'read_yaml' call karne par 'read_yaml_file' chale
+def read_yaml(file_path: str) -> dict:
+    return read_yaml_file(file_path)
 
-#  yaml file ko write krne ke liye function
+# YAML file write karne ke liye function
 def write_yaml_file(file_path: str, content: object, replace: bool = False) -> None:
     try:
         if replace:
@@ -33,15 +32,8 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
     except Exception as e:
         raise ChurnException(e, sys) from e
 
-
-
-# kisi bhi directory ya file se code/information load krne ke liye function
+# Object load karne ke liye function
 def load_object(file_path: str) -> object:
-    """
-    Returns model/object from project directory.
-    file_path: str location of file to load
-    return: Model/Obj
-    """
     try:
         with open(file_path, "rb") as file_obj:
             obj = dill.load(file_obj)
@@ -49,16 +41,8 @@ def load_object(file_path: str) -> object:
     except Exception as e:
         raise ChurnException(e, sys) from e
 
-
-
-
-#  numpy array ko save krne ke liy funtion 
+# Numpy array save karne ke liye function 
 def save_numpy_array_data(file_path: str, array: np.array):
-    """
-    Save numpy array data to file
-    file_path: str location of file to save
-    array: np.array data to save
-    """
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path, exist_ok=True)
@@ -67,32 +51,21 @@ def save_numpy_array_data(file_path: str, array: np.array):
     except Exception as e:
         raise ChurnException(e, sys) from e
 
-
-
-# Kisi bhi numpy array ko load krne ke liye funtion 
+# Numpy array load karne ke liye function 
 def load_numpy_array_data(file_path: str) -> np.array:
-    """
-    load numpy array data from file
-    file_path: str location of file to load
-    return: np.array data loaded
-    """
     try:
         with open(file_path, 'rb') as file_obj:
             return np.load(file_obj)
     except Exception as e:
         raise ChurnException(e, sys) from e
 
-
-# kisi bhi model/object ko save krne ke liye function
+# Model/Object save karne ke liye function
 def save_object(file_path: str, obj: object) -> None:
     logging.info("Entered the save_object method of utils")
-
     try:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "wb") as file_obj:
             dill.dump(obj, file_obj)
-
         logging.info("Exited the save_object method of utils")
-
     except Exception as e:
         raise ChurnException(e, sys) from e

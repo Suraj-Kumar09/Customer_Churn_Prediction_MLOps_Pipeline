@@ -1,0 +1,35 @@
+# updated dvc.yaml
+
+stages:
+  data_ingestion:
+    cmd: python customer_churn/components/data_ingestion.py
+    deps:
+    - customer_churn/components/data_ingestion.py
+    # params:
+    # - data_ingestion.test_size
+    outs:
+    - artifact/data_ingestion
+
+  data_transformation:
+    cmd: python customer_churn/components/data_transformation.py
+    deps:
+    - artifact/data_ingestion
+    - customer_churn/components/data_transformation.py
+    outs:
+    - artifact/data_transformation
+
+  data_validation:
+    cmd: python customer_churn/components/data_validation.py
+    deps:
+      - artifact/data_transformation
+      - customer_churn/components/data_validation.py
+    outs:
+      - artifact/data_validation
+
+  model_training:
+    cmd: python customer_churn/components/model_trainer.py
+    deps:
+      - artifact/data_validation
+      - customer_churn/components/model_trainer.py
+    outs:
+      - artifact/model_trainer/trained_model/model.pkl

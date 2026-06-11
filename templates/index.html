@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Churn Predictor</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="glass-card">
+        <h1>Churn Predictor</h1>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                <input type="number" step="0.01" name="tenure" placeholder="Tenure (Months)" required>
+            </div>
+            <div class="input-group">
+                <input type="number" step="0.01" name="monthly_charges" placeholder="Monthly Charges" required>
+            </div>
+            <div class="input-group">
+                <select name="contract">
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One year">One year</option>
+                    <option value="Two year">Two year</option>
+                </select>
+            </div>
+            <button type="submit" class="glow-on-hover">Predict Now</button>
+        </form>
+        {% if prediction %}
+            <div class="result-box">
+                <p>Status: <span>{{ prediction }}</span></p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

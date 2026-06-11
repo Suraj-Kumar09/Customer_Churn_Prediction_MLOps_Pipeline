@@ -17,6 +17,7 @@ MODEL_FILE_NAME = "model.pkl"
 PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 MODEL_CONFIG_FILE_PATH = os.path.join("config", "model.yaml")
+CONFIG_FILE_PATH = os.path.join("config", "model.yaml")
 
 # Target Column Configuration (Notebook ke hisaab se)
 TARGET_COLUMN = "Churn Label"
