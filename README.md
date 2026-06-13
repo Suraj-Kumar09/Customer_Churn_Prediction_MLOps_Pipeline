@@ -435,33 +435,12 @@ Through this project I gained hands-on experience in:
 
 ---
 
-# 👨‍💻 Author
-
-**Suraj Kumar**
-
-
-Aspiring AI/ML Engineer passionate about:
-
-* Machine Learning
-* MLOps
-* Generative AI
-* LLM Applications
-* Production AI Systems
 
 ---
 
 # 👨‍💻 Author
 
 ## Suraj Kumar
-
-Aspiring **AI/ML Engineer** with hands-on experience in:
-
-* 🤖 Machine Learning
-* ⚙️ MLOps
-* 🧠 Generative AI
-* 🔍 Retrieval-Augmented Generation (RAG)
-* 📚 Large Language Models (LLMs)
-* 🚀 Production-Ready AI Systems
 
 ### 📫 Contact Information
 
@@ -472,6 +451,16 @@ Aspiring **AI/ML Engineer** with hands-on experience in:
 💼 LinkedIn: https://www.linkedin.com/in/aideveloperontop/
 
 🐙 GitHub: https://github.com/Suraj-Kumar09
+
+Aspiring **AI/ML Engineer** with hands-on experience in:
+
+* 🤖 Machine Learning
+* ⚙️ MLOps
+* 🧠 Generative AI
+* 🔍 Retrieval-Augmented Generation (RAG)
+* 📚 Large Language Models (LLMs)
+* 🚀 Production-Ready AI Systems
+
 
 ---
 
