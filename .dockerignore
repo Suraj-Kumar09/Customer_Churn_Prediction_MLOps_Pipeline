@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# DVC (DVC files ko ignore karein agar cloud se pull karna ho)
+.dvc
+.dvcignore
+dvc.lock
+
+# Artifacts & Logs (Build ke samay image size chhota rakhne ke liye)
+artifact/
+!artifact/model_trainer/trained_model/model.pkl
+!artifact/data_transformation/preprocessing.pkl
+logs/
+
+# Python Cache & Environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Documentation & Junk
+notebook/
+demo.py
+README.md
+LICENSE
+*.egg-info

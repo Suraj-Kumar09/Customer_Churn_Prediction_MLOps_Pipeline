@@ -1,54 +1,73 @@
-ipykernel
+flask
 pandas
 numpy
-matplotlib
-plotly
-seaborn
-scipy
 scikit-learn
-imbalanced-learn
-xgboost
-catboost
-
-pymongo
-from_root
-dill
-PyYAML
-
-boto3
-mypy-boto3-s3
-botocore
-certifi
-
-fastapi
-uvicorn
-jinja2
-python-multipart
-
-kagglehub
-
 joblib
-
-mlflow
-dvc
-dvc-s3
-
-evidently
-
+dill
+pymongo
+PyYAML
+boto3
+botocore
 requests
-
 python-dotenv
-
 tqdm
+imbalanced-learn
 
-statsmodels
 
-feature-engine
 
-missingno
 
-lightgbm
-openpyxl
-neuro_mf
 
--e .
+# ipykernel
+# pandas
+# numpy
+# matplotlib
+# plotly
+# seaborn
+# scipy
+# scikit-learn
+# imbalanced-learn
+# xgboost
+# catboost
+
+# pymongo
+# from_root
+# dill
+# PyYAML
+
+# boto3
+# mypy-boto3-s3
+# botocore
+# certifi
+
+# fastapi
+# uvicorn
+# jinja2
+# python-multipart
+
+# kagglehub
+
+# joblib
+
+# mlflow
+# dvc
+# dvc-s3
+
+# evidently
+
+# requests
+
+# python-dotenv
+
+# tqdm
+
+# statsmodels
+
+# feature-engine
+
+# missingno
+
+# lightgbm
+# openpyxl
+# neuro_mf
+
+# # -e .
